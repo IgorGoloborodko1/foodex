@@ -1,10 +1,11 @@
-import * as React from 'react'
+import React from 'react'
 
 import Logo from './logo'
 import Navigation from './navigation'
 import UserMenu from './userMenu'
 
 import food from '../../logo.png'
+import avatar from '../../avatar.jpg'
 
 const navItems = ['menu', 'about', 'contact', 'delivery']
 
@@ -24,7 +25,7 @@ const AppHeader: React.FC<AppHeaderProps> = ({
         <Navigation navItems={navItems}/>
       </div>
       <div className='Header__UserMenu'>
-        <UserMenu temp=''/>
+        <UserMenu avatar={avatar} name='Mark Zuckerberg' />
       </div>
       <p>{prop}</p>
     </header>

@@ -1,26 +1,36 @@
-import * as React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Dropdown from './dropdown'
 import Avatar from './avatar'
-import avatar from '../../avatar.jpg'
 
 interface UserMenuProps {
-  temp: string
+  avatar: string
+  name: string
 }
 
-const UserMenu: React.FC<UserMenuProps> = ({temp}) => {
-  const [isDropDownOpen, setIsDropDownOpen] = React.useState(false)
-  const containerRef = React.useRef(null)
+const UserMenu: React.FC<UserMenuProps> = ({ avatar, name }) => {
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false)
+  const containerRef = useRef<HTMLDivElement>(null)
 
-  const handleWindowClick = (e: React.S) => {
-    const isTargetInsideContainer  = containerRef.!current.contains(e.target)
+  const openDropdown = () => {
+    setIsDropDownOpen(true)
+  }
+
+  const closeDropdown = () => {
     setIsDropDownOpen(false)
   }
 
-  const toggleDropdown = () => {
-    setIsDropDownOpen(!isDropDownOpen)
+  // @ts-ignore
+  const handleWindowClick = (e) => {
+    // @ts-ignore
+    const isTargetInsideContainer  = containerRef.current.contains(e.target)
+
+    if(isDropDownOpen && !isTargetInsideContainer) {
+      closeDropdown()
+    }
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
+    console.log('called!')
     window.addEventListener('click', handleWindowClick)
     return () => {
       window.removeEventListener('click', handleWindowClick)
@@ -28,10 +38,10 @@ const UserMenu: React.FC<UserMenuProps> = ({temp}) => {
   })
 
   return (
-    <div className='UserMenu' onClick={toggleDropdown} ref={containerRef}>
+    <div className='UserMenu' onClick={openDropdown} ref={containerRef}>
       <Avatar imgUrl={avatar} width={65} height={65} />
-      <span className='UserName'>Mark Zuckerberg</span>
-      {isDropDownOpen && <Dropdown temp='temp'/>}
+      <span className='UserName'>{name}</span>
+      {isDropDownOpen && <Dropdown />}
     </div>
   )
 }

@@ -1,11 +1,11 @@
-import * as React from 'react'
+import React from 'react'
 
-interface DropdownProps {
-  temp: string
-}
+// interface DropdownProps {
+//   temp: string
+// }
 
-const Dropdown: React.FC<DropdownProps> = ({
-  temp
+const Dropdown: React.FC = ({
+  
 }) => {
   return (
     <div className='Dropdown'>
