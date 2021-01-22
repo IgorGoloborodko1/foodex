@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MenuPage from './components/menuPage';
+import App from './components/app/App';
 
 import './index.css';
 
 ReactDOM.render(
-  <MenuPage />,
+  <App />,
   document.getElementById('root')
 );

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import Dropdown from './dropdown'
-import Avatar from './avatar'
+import Dropdown from './dropdown/dropdown'
+import Avatar from '../avatar/avatar'
+import s from './userMenu.module.css'
 
 interface UserMenuProps {
   avatar: string
@@ -30,7 +31,6 @@ const UserMenu: React.FC<UserMenuProps> = ({ avatar, name }) => {
   }
 
   useEffect(() => {
-    console.log('called!')
     window.addEventListener('click', handleWindowClick)
     return () => {
       window.removeEventListener('click', handleWindowClick)
@@ -38,9 +38,9 @@ const UserMenu: React.FC<UserMenuProps> = ({ avatar, name }) => {
   })
 
   return (
-    <div className='UserMenu' onClick={openDropdown} ref={containerRef}>
+    <div className={s.container} onClick={openDropdown} ref={containerRef}>
       <Avatar imgUrl={avatar} width={65} height={65} />
-      <span className='UserName'>{name}</span>
+      <span className={s.name}>{name}</span>
       {isDropDownOpen && <Dropdown />}
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import AppHeader from '../header/appHeader'
+import AppHeader from '../appHeader/appHeader'
 import Modal from '../modal'
 
 const App = () => {
