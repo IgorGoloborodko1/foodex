@@ -6,7 +6,7 @@ import UserMenu from '../userMenu/userMenu'
 
 import logo from './assets/logo.png'
 import avatar from './assets/avatar.jpg'
-import s from './appHeader.module.css'
+import styles from './appHeader.module.css'
 
 const navItems = [
   {id: 1, name: 'menu'},
@@ -15,25 +15,18 @@ const navItems = [
   {id: 4, name: 'delivery'},
 ]
 
-interface AppHeaderProps {
-  prop: string
-}
-
-const AppHeader: React.FC<AppHeaderProps> = ({
-  prop
-}) => {
+const AppHeader: React.FC = () => {
   return (
-    <header className={s.header}>
-      <div className={s.logo}>
+    <header className={styles.header}>
+      <div className={styles.logo}>
         <Logo imgUrl={logo} width={65} height = {65} />
       </div>
       <div className='menu'>
         <Navigation navItems={navItems}/>
       </div>
-      <div className={s.usermenu}>
+      <div className={styles.usermenu}>
         <UserMenu avatar={avatar} name='Mark Zuckerberg' />
       </div>
-      <p>{prop}</p>
     </header>
   )
 }

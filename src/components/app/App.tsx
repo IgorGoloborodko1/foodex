@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import AppHeader from '../appHeader/appHeader'
-import Modal from '../modal'
+import Modal from '../modal/modal'
+import OrderHistory from '../ordersHistory/orderHistory'
+import Auth from '../auth/auth'
 
 const App = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -15,9 +17,14 @@ const App = () => {
 
   return (
     <div className="App">
-      <AppHeader prop='Hello' />
-      <button onClick={openModal}>Open modal</button>
-      {isModalOpen && <Modal closeModal={closeModal} />}
+      <AppHeader />
+      {/* <button onClick={openModal}>Open modal</button>
+      {isModalOpen && <Modal closeModal={closeModal} />} */}
+
+     {/* <OrderHistory /> */} 
+
+      <Auth />
+
     </div>
   );
 }

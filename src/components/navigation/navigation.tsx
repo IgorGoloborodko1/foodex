@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './navigation.module.css'
+import styles from './navigation.module.css'
 
 interface NavItem {
   id: number
@@ -14,9 +14,9 @@ const Navigation: React.FC<NavigationProps> = ({
   navItems
 }) => {
   return (
-    <ul className={s.list}>
+    <ul className={styles.list}>
       {navItems.map(({id, name}) => (
-        <li key={id}><a className={s.link} href='/'>{name}</a></li>
+        <li key={id}><a className={styles.link} href='/'>{name}</a></li>
       ))}
     </ul>
   )

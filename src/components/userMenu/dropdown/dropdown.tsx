@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './dropdown.module.css'
+import styles from './dropdown.module.css'
 
 // interface DropdownProps {
 //   temp: string
@@ -7,7 +7,7 @@ import s from './dropdown.module.css'
 
 const Dropdown: React.FC = () => {
   return (
-    <div className={s.dropdown}>
+    <div className={styles.dropdown}>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nulla eius asperiores accusantium exercitationem architecto fuga illum tempore! Officiis, corrupti!
       <button>Logout</button>
     </div>

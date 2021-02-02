@@ -1,5 +1,5 @@
 import React from 'react'
-import s from './avatar.module.css'
+import styles from './avatar.module.css'
 
 interface AvatarProps {
   imgUrl: string
@@ -9,7 +9,7 @@ interface AvatarProps {
 
 const Avatar: React.FC<AvatarProps> = ({imgUrl = '', width = 60, height = 60}) => {
   return (
-      <img className={s.avatar} src={imgUrl} alt='app logo' width={width} height={height} />
+      <img className={styles.avatar} src={imgUrl} alt='app logo' width={width} height={height} />
   )
 }
 

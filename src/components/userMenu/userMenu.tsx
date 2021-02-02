@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import Dropdown from './dropdown/dropdown'
 import Avatar from '../avatar/avatar'
-import s from './userMenu.module.css'
+import styles from './userMenu.module.css'
 
 interface UserMenuProps {
   avatar: string
@@ -38,9 +38,9 @@ const UserMenu: React.FC<UserMenuProps> = ({ avatar, name }) => {
   })
 
   return (
-    <div className={s.container} onClick={openDropdown} ref={containerRef}>
+    <div className={styles.container} onClick={openDropdown} ref={containerRef}>
       <Avatar imgUrl={avatar} width={65} height={65} />
-      <span className={s.name}>{name}</span>
+      <span className={styles.name}>{name}</span>
       {isDropDownOpen && <Dropdown />}
     </div>
   )
