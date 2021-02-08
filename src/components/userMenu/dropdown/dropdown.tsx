@@ -1,4 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import { UserNavItems } from '../../../configs/userNav'
+
 import styles from './dropdown.module.css'
 
 // interface DropdownProps {
@@ -8,7 +12,13 @@ import styles from './dropdown.module.css'
 const Dropdown: React.FC = () => {
   return (
     <div className={styles.dropdown}>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nulla eius asperiores accusantium exercitationem architecto fuga illum tempore! Officiis, corrupti!
+      <ul>
+        {UserNavItems.map(({id, name, path}) => (
+          <li key={id}>
+            <Link to={path}>{name}</Link>
+          </li>
+        ))}
+      </ul>
       <button>Logout</button>
     </div>
   )

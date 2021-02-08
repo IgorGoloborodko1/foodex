@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
+import { Routes } from '../../configs/routes'
 import MenuCard from './menuCard'
 
 interface MenuGridItem {
@@ -25,14 +28,16 @@ const MenuGrid: React.FC<MenuGridProps> = ({
     <ul>
       {items.map(({name, id, price, image}) => (
         <li key={id}>
-          <MenuCard
-            name={name}
-            image={image}
-            price={price}
-            id={id}
-            onDelete={onDelete}
-            onShowMoreInfo={onShowMoreInfo}
-          />
+          <Link to={`${Routes.MENU}/${id}`}>
+            <MenuCard
+              name={name}
+              image={image}
+              price={price}
+              id={id}
+              onDelete={onDelete}
+              onShowMoreInfo={onShowMoreInfo}
+            />
+          </Link>
         </li>
       ))}
     </ul>

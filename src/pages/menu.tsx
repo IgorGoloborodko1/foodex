@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import MenuGrid from './menuGrid'
-import * as API from '../../services/api'
+import MenuGrid from '../components/menu/menuGrid'
+import * as API from '../services/api'
 
 const MenuPage: React.FC = () => {
   const [menu, setMenu] = useState<any[]>([])

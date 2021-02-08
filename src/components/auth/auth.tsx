@@ -4,9 +4,7 @@ import SigninForm from './signinForm/signinForm'
 import styles from './auth.module.css'
 
 const Auth = () => {
-  const [isSignedIn, setIsSignedIn] = useState(false)
-
-  const 
+  const [isSignedIn, setIsSignedIn] = useState(true)
   
   return (
     <div>

@@ -1,9 +1,13 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
+
+import { Routes } from '../../configs/routes'
 import styles from './navigation.module.css'
 
 interface NavItem {
   id: number
-  name: string
+  name: string,
+  path: string
 }
 
 interface NavigationProps {
@@ -15,8 +19,12 @@ const Navigation: React.FC<NavigationProps> = ({
 }) => {
   return (
     <ul className={styles.list}>
-      {navItems.map(({id, name}) => (
-        <li key={id}><a className={styles.link} href='/'>{name}</a></li>
+      {navItems.map(({id, name, path}) => (
+        <li key={id}>
+          <NavLink to={path} className={styles.link}>
+            {name}
+          </NavLink>
+        </li>
       ))}
     </ul>
   )
